@@ -1,0 +1,15 @@
+---
+- name: Print all available facts
+  hosts: db2
+  tasks:
+          #    - name: print todo
+      #      debug:
+              #        var: ansible_facts
+    - name: print facts
+      debug:
+        msg: "{{ ansible_memory_mb.nocache.free }} DNS: {{ item }} "
+      loop: "{{ ansible_dns.nameservers }}" 
+    - name: print facts2
+      debug:
+        var: hostvars[inventory_hostname]['ansible_default_ipv4']['address'] 
+

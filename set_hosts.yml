@@ -1,0 +1,10 @@
+---
+- name: set_hosts escribe el  /etc/hosts
+  hosts: ansibles
+  gather_facts: true
+  tasks:
+    - name: escribe hosts
+      template:
+        src: hosts.j2
+        dest: /etc/hosts
+
